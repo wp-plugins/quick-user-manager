@@ -1,11 +1,11 @@
-﻿=== Quick User Manager - front-end user registration, login and edit profile, email to the user(s) and users group === 
+﻿=== Quick User Manager - front-end user registration, login and edit profile, email to the user(s) === 
 
 Contributors: crackcodex, rhinokul
 
 
 Donate link: http://plugin.crackcodex.com/quick-user-manager/
 
-Tags: registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, Quick User Manager, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, email to the registered user(s), email to the users group, member directory
+Tags: quick user manager, user manager, registration, user profile, user registration, custom field registration, customize profile, user fields, extra user fields, builder, custom user profile, user profile page, edit profile, custom registration, custom registration form, custom registration page, registration page, user custom fields, user listing, front-end user listing, user login, user registration form, front-end login, login redirect, login widget, front-end register, front-end registration, front-end edit profile, front-end user registration, custom redirects, user email, avatar upload, email confirmation, user approval, customize registration email, minimum password length, minimum password strength, password strength meter, multiple registration forms, register, register form, email to the registered user(s), email to the users group, member directory
 
 Requires at least: 3.1
 Tested up to: 4.2.2
