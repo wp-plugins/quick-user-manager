@@ -1,4 +1,4 @@
-﻿=== Quick User Manager - front-end user registration, login and edit profile, email to the registered user(s) and users group === 
+﻿=== Quick User Manager - front-end user registration, login and edit profile, email to the user(s) and users group === 
 
 Contributors: crackcodex, rhinokul
 
