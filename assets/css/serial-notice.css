@@ -1,0 +1,15 @@
+.qum-serial-wrap{
+    margin:40px 0;
+}
+
+.qum-dismiss-notification{
+    position:absolute;
+    right:0px;
+    top:50%;
+    margin-top:-7px;
+}
+
+div.qum-serial-notification p{
+    padding-right: 50px;
+    position:relative;
+}

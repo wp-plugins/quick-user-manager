@@ -1,0 +1,520 @@
+/* Register & Edit Profile Forms*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Forms
+3.0 - Alignments
+4.0 - Errors & Notices
+5.0 - User Listing 
+6.0 - Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+.qum-user-forms,
+.qum-user-forms *{
+	-webkit-box-sizing: border-box !important; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box !important;    /* Firefox, other Gecko */
+	box-sizing: border-box !important;         /* Opera/IE 8+ */
+}
+
+/*--------------------------------------------------------------
+2.0 Forms
+--------------------------------------------------------------*/
+.qum-user-forms input:not([type="button"]):not([type="reset"]):not([type="submit"]),
+.qum-user-forms select,
+.qum-user-forms textarea{
+	font-size: 100%; /* Corrects font size not being inherited in all browsers */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+}
+.qum-user-forms input[type="checkbox"],
+.qum-user-forms input[type="radio"] {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+}
+.qum-user-forms input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+.qum-user-forms input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+.qum-user-forms button::-moz-focus-inner,
+.qum-user-forms input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+.qum-user-forms input[type="text"],
+.qum-user-forms input[type="email"],
+.qum-user-forms input[type="url"],
+.qum-user-forms input[type="password"],
+.qum-user-forms input[type="search"],
+.qum-user-forms textarea{
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.qum-user-forms input[type="text"]:focus,
+.qum-user-forms input[type="email"]:focus,
+.qum-user-forms input[type="url"]:focus,
+.qum-user-forms input[type="password"]:focus,
+.qum-user-forms input[type="search"]:focus,
+.qum-user-forms textarea:focus {
+	color: #111;
+}
+.qum-user-forms input[type="text"],
+.qum-user-forms input[type="email"],
+.qum-user-forms input[type="url"],
+.qum-user-forms input[type="password"],
+.qum-user-forms input[type="search"] {
+	padding: 3px;
+}
+.qum-user-forms textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+.qum-user-forms .qum-wysiwyg .wp-editor-wrap { /* properly align wysiwyg editor among form fields */
+    float:left;
+    width:69.9%;
+}
+.qum-user-forms .qum-wysiwyg button:hover{ /* wysiwyg - overwrite the theme inherited background color on hover*/
+    background: none;
+}
+.qum-user-forms .qum-wysiwyg div.mce-tinymce.mce-panel{   /*Display the borders for the TinyMCE editor - Visual tab*/
+    border: 1px solid #ccc !important;
+    color: #666 !important;
+}
+.qum-user-forms .qum-wysiwyg div.mce-panel.mce-first{
+    border-width: 0 0 1px 0 !important;
+}
+.qum-user-forms .qum-wysiwyg div.mce-panel.mce-last{
+    border-width: 1px 0 !important;
+}
+.qum-user-forms .qum-wysiwyg .quicktags-toolbar {      /*Display the borders for the TinyMCE editor - Text tab*/
+    border: 1px solid #dedede;
+    border-bottom: 0;
+}
+#wp-link label input[type="text"] {    /*Fix the looks of the Add Link window for TinyMCE editor*/
+    padding: 0px;
+}
+
+#qum-search-fields{
+    min-width: 250px;
+    float:left;
+    margin-right:20px;
+}
+
+.qum-user-forms .qum-search-button{
+    margin-right:10px;
+    padding:7px 20px;
+    line-height: 24px;
+}
+
+.qum-search-users-wrap{
+    margin-bottom: 20px;
+}
+/*--------------------------------------------------------------
+3.0 Alignments
+--------------------------------------------------------------*/
+.qum-user-forms ul{
+	max-width:900px;
+	list-style:none;
+	margin-left:0;
+	margin-right:0;
+    padding-left:0;
+    padding-right:0;
+}
+
+.qum-user-forms ul li{
+    list-style:none;
+}
+
+.qum-user-forms ul li,
+#qum-login-wrap p,
+#select_user_to_edit_form p{
+	overflow:hidden;
+	margin:0;
+	padding-bottom:14px;
+}
+
+.qum-form-field label,
+#qum-login-wrap .login-username label,
+#qum-login-wrap .login-password label{
+	width:30%;
+	float:left;
+	min-height:1px;
+}
+.qum-form-field input,
+.qum-form-field input[type="text"], .qum-form-field input[type="email"], .qum-form-field input[type="url"], .qum-form-field input[type="password"], .qum-form-field input[type="search"],
+.qum-form-field select,
+.qum-form-field textarea,
+.qum-checkboxes,
+.qum-radios,
+#qum-login-wrap .login-username input,
+#qum-login-wrap .login-password input{
+	width:69.9%;
+	float:left;
+}
+
+.qum-user-forms .qum-wysiwyg .wp-editor-wrap .wp-editor-tabs *{
+    box-sizing: content-box !important;
+}
+
+.qum-user-forms .wp-editor-wrap input {
+    float: none;
+    width: auto;
+}
+
+input#send_credentials_via_email{
+	float:none;
+	width:auto;
+	margin-right:10px
+}
+
+.qum-send-credentials-checkbox label{
+	width:auto;
+}
+
+.qum-form-field > span{
+	display:block;
+	clear:both;
+	margin-left:30%;
+	font-size:80%;
+	font-style:italic;
+}
+
+.qum_upload_button{
+    display:inline-block;
+}
+
+.qum-user-forms .qum-checkboxes li,
+.qum-user-forms .qum-radios li{
+	display:inline-block;
+	padding:0 20px 0 0;
+}
+
+.qum-form-field .qum-checkboxes label,
+.qum-form-field .qum-radios label{
+	float:none;
+	min-width:0;
+	padding-left:5px;
+}
+
+.qum-checkbox-terms-and-conditions input,
+.qum-checkboxes li input,
+.qum-radios li input{
+	min-width:0;
+	float:none;
+	width:auto;
+}
+
+.qum-edit-user .qum-checkbox-terms-and-conditions {
+	display:none;
+}
+
+.qum-form-field.qum-heading span,
+.qum-default-about-yourself-heading span,
+.qum-default-contact-info-heading span,
+.qum-default-name-heading span,
+.qum-checkbox-terms-and-conditions span{
+	margin-left:0;
+}
+
+
+#recaptcha_widget_div{
+	display: inline-block;
+}
+#recaptcha_widget_div iframe{
+    margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+4.0 Errors & Notices
+--------------------------------------------------------------*/
+
+#qum_general_top_error_message,
+.qum-error,
+.qum-warning {
+    padding: 6px 9px;
+    margin: 0 auto 25px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffebe8;
+    border: 1px solid #C00;
+}
+
+.qum-required{
+	color: red;
+}
+
+.qum-required,
+.qum-checkbox-terms-and-conditions span.qum-required{
+    margin-left:5px;
+}
+
+#qum_form_success_message,
+.qum-success {
+    padding: 6px 9px;
+    margin: 0 auto 25px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    background: #e7f7d3;
+    border: 1px solid #6c3;
+}
+
+.qum-register-user .qum-field-error,
+.qum-edit-user .qum-field-error,
+#qum-recover-password .qum-field-error{
+	background-color: #FFDFDF;
+    border: 1px dotted #C89797;
+    margin-bottom: 6px !important;
+    padding: 6px !important;
+}
+
+.qum-field-error > input,
+.qum-field-error > select,
+.qum-field-error > textarea,
+.qum-field-error > label{
+    margin-bottom: 10px;
+}
+
+.qum-field-error img{
+    box-shadow: none;
+    -webkit-box-shadow:none;
+    border:none;
+    border-radius:0px;
+    vertical-align: middle;
+    margin-top: -3px;
+    padding-left:5px;
+}
+
+.qum-form-field > span.qum-form-error{
+    margin-top:10px;
+    padding-top: 5px;
+    border-top:1px dotted #c89797;
+    font-size:100%;
+    margin-left: 0;
+}
+
+
+
+
+/*--------------------------------------------------------------
+5.0 User Listing
+--------------------------------------------------------------*/
+.qum-table *{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.qum-table{
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+    border-spacing: 0.5rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.qum-table th{
+    background: #f4f4f4;
+    padding: 7px;
+    border:1px solid #e1e1e1;
+    text-align: left;
+}
+
+.qum-table thead tr:hover{
+    background: none;
+}
+
+.qum-table .qum-sorting .qum-sorting-default {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url('../images/sorting-default.png') no-repeat center center;
+    vertical-align: middle;
+}
+
+.qum-table .qum-sorting .qum-sorting-ascending {
+    background-image: url('../images/sorting-ascending.png');
+}
+
+.qum-table .qum-sorting .qum-sorting-descending {
+    background-image: url('../images/sorting-descending.png');
+}
+
+.qum-table tr:hover{
+    background: #f1fcff;
+}
+.qum-table td{
+    padding: 7px;
+    border:1px solid #e1e1e1;
+}
+
+.qum-table .qum-posts,
+.qum-table .qum-moreinfo{
+    text-align: center;
+}
+
+.qum-avatar img {
+    max-width: none;
+}
+
+ul.qum-profile{
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left:0;
+    padding-right: 0;
+}
+
+ul.qum-profile li{
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+}
+
+ul.qum-profile li label{
+    display: block;
+    width:30%;
+    float:left;
+    min-height:1px;
+    font-weight: bold;
+}
+
+ul.qum-profile li span{
+    display: block;
+    width:69.9%;
+    float:left;
+}
+
+ul.qum-profile li h3,
+ul.qum-profile li h3:first-child{
+    margin:20px 0;
+    padding-top:20px;
+    border-top:1px solid #d2d2d2;
+}
+
+@media screen and ( max-width: 720px ) {
+
+    .qum-table {
+        border: 0;
+    }
+
+    .qum-table thead {
+        display: none
+    }
+
+    .qum-table tr {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .qum-table td {
+        display: block;
+        text-align: right;
+        border-bottom: 0;
+    }
+
+    .qum-table td:last-of-type {
+        border-bottom: 1px solid #e1e1e1;
+    }
+
+    .qum-table .qum-posts,
+    .qum-table .qum-moreinfo{
+        text-align: right;
+    }
+
+    .qum-table td:before {
+        content: attr(data-label);
+        float: left;
+    }
+
+    .qum-table td:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+}
+
+/*--------------------------------------------------------------
+6.0 Media Queries
+--------------------------------------------------------------*/
+
+@media screen and (max-width: 400px) {
+
+	.qum-form-field label,
+	#qum-login-wrap .login-username label,
+	#qum-login-wrap .login-password label,
+    ul.qum-profile li label{
+		width:100%;
+		display:block;
+		float:none;
+	}
+
+	.qum-form-field input,
+	.qum-form-field select,
+	.qum-form-field textarea,
+	.qum-checkboxes,
+	.qum-radios,
+	#qum-login-wrap .login-username input,
+	#qum-login-wrap .login-password input,
+    ul.qum-profile li span{
+		width:100%;
+		float:left;
+	}
+
+	.qum-form-field > span{
+		margin-left:0;
+	}
+
+	.qum-checkboxes li label, 
+	.qum-radios li label{
+		display:inline;
+	}
+	
+	.qum-form-field .qum-avatar-nofile,
+	.qum-form-field .qum-avatar-file,
+	.qum-form-field .qum-upload-nofile,
+	.qum-form-field .qum-upload-file{
+		margin-left:0;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+7.0 Password Strength
+--------------------------------------------------------------*/
+#pass-strength-result {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    display: none;
+    float: left;
+    margin: 13px 5px 5px 30%;
+    padding: 3px 5px;
+    text-align: center;
+    width: 200px;
+    height:28px;
+}
+#pass-strength-result.short {
+    background-color: #ffa0a0;
+    border-color: #f04040;
+}
+#pass-strength-result.bad {
+    background-color: #ffb78c;
+    border-color: #ff853c;
+}
+#pass-strength-result.good {
+    background-color: #ffec8b;
+    border-color: #fc0;
+}
+#pass-strength-result.strong {
+    background-color: #c3ff88;
+    border-color: #8dff1c;
+}

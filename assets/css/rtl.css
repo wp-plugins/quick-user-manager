@@ -1,0 +1,60 @@
+.qum-user-forms .qum-wysiwyg .wp-editor-wrap { 
+    float:right;
+}
+#qum-search-fields{
+    float:right;
+}
+.qum-form-field label,
+#qum-login-wrap .login-username label,
+#qum-login-wrap .login-password label{
+    float:right;
+}
+.qum-form-field input,
+.qum-form-field input[type="text"], .qum-form-field input[type="email"], .qum-form-field input[type="url"], .qum-form-field input[type="password"], .qum-form-field input[type="search"],
+.qum-form-field select,
+.qum-form-field textarea,
+.qum-checkboxes,
+.qum-radios,
+#qum-login-wrap .login-username input,
+#qum-login-wrap .login-password input{
+    float:right;
+}
+.qum-table th{
+    text-align: right;
+}
+ul.qum-profile li label{
+    float:right;
+}
+ul.qum-profile li span{
+    float:right;
+}
+
+@media screen and ( max-width: 720px ) {
+    .qum-table td {
+        text-align: right;
+    }
+    .qum-table .qum-posts,
+    .qum-table .qum-moreinfo{
+        text-align: left;
+    }
+    .qum-table td:before {
+        float: right;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .qum-form-field input,
+    .qum-form-field select,
+    .qum-form-field textarea,
+    .qum-checkboxes,
+    .qum-radios,
+    #qum-login-wrap .login-username input,
+    #qum-login-wrap .login-password input,
+    ul.qum-profile li span{
+        float:right;
+    }
+}
+
+#pass-strength-result {
+    float: right;
+}
